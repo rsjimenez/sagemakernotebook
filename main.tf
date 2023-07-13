@@ -58,12 +58,12 @@ resource "aws_iam_role_policy" "sagemaker_role_policy" {
 }
 
 resource "aws_sagemaker_notebook_instance" "sagemaker_notebook" {
-  name          = "rj-notebook-instance"
-  role_arn      = "arn:aws:iam::155029645081:role/service-role/AmazonSageMakerServiceCatalogProductsExecutionRole"
+  name          = "my-notebook-instance" #name your notebook
+  role_arn      = "arn:aws:iam::155xxxxxxxxxx:role/service-role/AmazonSageMakerServiceCatalogProductsExecutionRole"
   instance_type = "ml.t2.medium"
 
   security_groups = [aws_security_group.sagemaker_sg.id]
-  subnet_id       = "subnet-0e82c477"  # Replace with your subnet ID
+  subnet_id       = "subnet-0xxxxxxxx"  # Replace with your subnet ID
 
   tags = {
     Name = "sagemaker-notebook"
